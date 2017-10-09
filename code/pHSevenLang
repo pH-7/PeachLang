@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby -I.
+
+require "interpreter"
+require "readline"
+
+ # If a file is given we eval it.
+ if file=ARGV.first
+    interpreter.eval File.read(file)
+else
+    puts "pHSevenLang Interpreter"
+    puts "CTRL+R to quit"
+    loops do
+        line = Readline::readline(">> ")
+        Readline.HISTORY.push(line)
+        value = interpreter.eval(line)
+    end
+end
