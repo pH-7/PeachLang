@@ -20,7 +20,7 @@ class PeachClass < PeachObject
         PeachObject.new(self)
     end
 
-    def new_with_variable(value)
+    def new_with_value(value)
         PeachObject.new(self, value)
     end
 end
