@@ -76,23 +76,23 @@ class SetLocalNode
 end
 
 
-class DefNode
+class FunctionNode
     def eval(context)
-        method = pHSevenLangMethod.new(params, body)
+        method = PeachMethod.new(params, body)
         context.current_class.runtime_methods[name] = method
     end
 end
 
 class ClassNode
     def eval(context)
-        pHClass = Constants[name] #Check if the class is already defined or not
-        unless pHClass #Class doesn't exist yet
-            pHClass = pHSevenLangClass.new
-            Constants[name] = pHClass # Define the class in the runtime
+        peach_class = Constants[name] #Check if the class is already defined or not
+        unless peach_class #Class doesn't exist yet
+            peach_class = peach_class.new
+            Constants[name] = peach_class # Define the class in the runtime
         end
 
-        pHClass = Context.new(pHClass, pHClass)
-        body.eval(pHClass)
+        peach_class = Context.new(peach_class, peach_class)
+        body.eval(peach_class)
     end
 end
 

@@ -38,7 +38,7 @@ class CallNode < Struct.new(:receiver, :method, :arguments); end
 class GetLocalNode < Struct.new(:name); end
 class SetLocalNode < Struct.new(:name, :value); end
 
-class DefNode < Struct.new(:name, :params, :body); end
+class FunctionNode < Struct.new(:name, :params, :body); end
 
 class ClassNode < Struct.new(:name, :body); end
 

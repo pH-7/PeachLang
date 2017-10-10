@@ -1,4 +1,4 @@
-class pHSevenLangMethod
+class PeachMethod
     def initialize(params, body)
         @params = params
         @body = body

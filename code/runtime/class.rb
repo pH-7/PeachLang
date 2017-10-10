@@ -1,5 +1,4 @@
-class pHSevenLangClass < pHSevenLangObject
-
+class PeachClass < PeachObject
     attr_reader :runtime_methods
 
     def initialize
@@ -13,15 +12,15 @@ class pHSevenLangClass < pHSevenLangObject
         method
     end
 
-    def def(name, @block)
+    def def(name, &block)
         @runtime_methods[name.to_s] = block
     end
 
     def new
-        pHSevenLangObject.new(self)
+        PeachObject.new(self)
     end
 
     def new_with_variable(value)
-        pHSevenLangObject.new(self, value)
+        PeachObject.new(self, value)
     end
 end

@@ -7,7 +7,7 @@ require "readline"
  if file=ARGV.first
     interpreter.eval File.read(file)
 else
-    puts "pHSevenLang Interpreter"
+    puts "PeachLang Interpreter"
     puts "CTRL+R to quit"
     loops do
         line = Readline::readline(">> ")
