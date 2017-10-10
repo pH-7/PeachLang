@@ -1,4 +1,6 @@
-#!/usr/bin/env ruby -I.
+#!/usr/bin/env ruby -s
+
+$:.unshift File.expand_path("..", __FILE__) # Set to the correct path
 
 require "interpreter"
 require "readline"
