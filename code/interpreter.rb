@@ -15,7 +15,7 @@ class Nodes
     def eval(context)
         return_value = nil
         nodes.each do |node|
-            eturn_value = node.eval(context)
+            return_value = node.eval(context)
         end
         return_value || Constants["nill"]
     end
