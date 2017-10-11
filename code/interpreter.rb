@@ -12,13 +12,14 @@ class Interpreter
 end
 
 class Nodes
-    def eval(context)
-        return_value = nil
-        nodes.each do |node|
-            return_value = node.eval(context)
-        end
-        return_value || Constants["nil"]
+  def eval(context)
+    return_value = nil
+    nodes.each do |node|
+      return_value = node.eval(context)
     end
+
+    return_value || Constants["nil"]
+  end
 end
 
 class NumberNode
@@ -75,8 +76,6 @@ class SetLocalNode
     end
 end
 
-
-
 class CallNode
   def eval(context)
     if receiver
@@ -89,7 +88,6 @@ class CallNode
   end
 end
 
-
 class FunctionNode
     def eval(context)
         method = PeachMethod.new(params, body)
@@ -98,18 +96,17 @@ class FunctionNode
 end
 
 class ClassNode
-    def eval(context)
-        peach_class = Constants[name] #Check if the class is already defined or not
-        unless peach_class #Class doesn't exist yet
-            peach_class = peach_class.new
-            Constants[name] = peach_class # Define the class in the runtime
-        end
-
-        peach_class = Context.new(peach_class, peach_class)
-        body.eval(peach_class)
+  def eval(context)
+    peach_class = Constants[name] #Check if the class is already defined or not
+      unless peach_class #Class doesn't exist yet
+      peach_class = peach_class.new
+      Constants[name] = peach_class # Define the class in the runtime
     end
-end
 
+    peach_class = Context.new(peach_class, peach_class)
+    body.eval(peach_class)
+  end
+end
 
 class IfNode
   def eval(context)
