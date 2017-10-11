@@ -2,7 +2,7 @@ class Lexer
     RESERVED_KEYWORDS = ["def", "class", "if", "true", "false", "nil"]
 
     def tokenize(code)
-        code.chomp!
+        code.chomp! # Remove extra line breaks
         tokens = []
 
         current_indent = 0 # number of spaces in the last indent
