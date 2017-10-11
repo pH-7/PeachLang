@@ -3,13 +3,12 @@ require "lexer"
 code= <<-CODE
 if 1:
   if 2:
-    print("...")
+    say("...")
     if false:
       pass
-    print("done!")
+    say("done!")
   2
 
-print "The End"
 CODE
 
 tokens = [
@@ -17,7 +16,7 @@ tokens = [
     [:INDENT, 2],
       [:IF, "if"], [:NUMBER, 2],
       [:INDENT, 4],
-        [:IDENTIFIER, "print"], ["(", "("],
+        [:IDENTIFIER, "say"], ["(", "("],
                                   [:STRING, "..."],
                                 [")", ")"],
                                 [:NEWLINE, "\n"],
@@ -25,14 +24,13 @@ tokens = [
         [:INDENT, 6],
           [:IDENTIFIER, "pass"],
         [:DEDENT, 4], [:NEWLINE, "\n"],
-        [:IDENTIFIER, "print"], ["(", "("],
+        [:IDENTIFIER, "say"], ["(", "("],
                                   [:STRING, "done!"],
                                 [")", ")"],
     [:DEDENT, 2], [:NEWLINE, "\n"],
     [:NUMBER, 2],
   [:DEDENT, 0], [:NEWLINE, "\n"],
-  [:NEWLINE, "\n"],
-  [:IDENTIFIER, "print"], [:STRING, "The End"]
+  [:NEWLINE, "\n"]
 ]
 
 assert_equal tokens, Lexer.new.tokenize(code)
