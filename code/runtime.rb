@@ -26,7 +26,7 @@ Constants["Class"].def :new do |receiver, arguments|
     receiver.new
 end
 
-Constants["Object"].def :say do |receiver, arguments|
+Constants["Object"].def :print do |receiver, arguments|
   puts arguments.first.ruby_value
   Constants["nil"]
 end

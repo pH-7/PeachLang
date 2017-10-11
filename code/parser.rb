@@ -11,7 +11,7 @@ require 'racc/parser.rb'
 
 class Parser < Racc::Parser
 
-module_eval(<<'...end grammar.y/module_eval...', 'grammar.y', 219)
+module_eval(<<'...end grammar.y/module_eval...', 'grammar.y', 220)
   def parse(code, show_tokens=false)
     @tokens = Lexer.new.tokenize(code) # Tokenize the code using our lexer
     puts @tokens.inspect if show_tokens
@@ -634,42 +634,42 @@ module_eval(<<'.,.,', 'grammar.y', 189)
   end
 .,.,
 
-module_eval(<<'.,.,', 'grammar.y', 190)
+module_eval(<<'.,.,', 'grammar.y', 191)
   def _reduce_50(val, _values, result)
      result = DefNode.new(val[1], val[3], val[5]) 
     result
   end
 .,.,
 
-module_eval(<<'.,.,', 'grammar.y', 194)
+module_eval(<<'.,.,', 'grammar.y', 195)
   def _reduce_51(val, _values, result)
      result = [] 
     result
   end
 .,.,
 
-module_eval(<<'.,.,', 'grammar.y', 195)
+module_eval(<<'.,.,', 'grammar.y', 196)
   def _reduce_52(val, _values, result)
      result = val 
     result
   end
 .,.,
 
-module_eval(<<'.,.,', 'grammar.y', 196)
+module_eval(<<'.,.,', 'grammar.y', 197)
   def _reduce_53(val, _values, result)
      result = val[0] << val[2] 
     result
   end
 .,.,
 
-module_eval(<<'.,.,', 'grammar.y', 202)
+module_eval(<<'.,.,', 'grammar.y', 203)
   def _reduce_54(val, _values, result)
      result = ClassNode.new(val[1], val[2]) 
     result
   end
 .,.,
 
-module_eval(<<'.,.,', 'grammar.y', 207)
+module_eval(<<'.,.,', 'grammar.y', 208)
   def _reduce_55(val, _values, result)
      result = IfNode.new(val[1], val[2]) 
     result
