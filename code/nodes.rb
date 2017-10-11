@@ -1,10 +1,8 @@
-class Nodes
-   def initialize(nodes)
-     @nodes = nodes
-   end
-   def nodes
-     @nodes
-    end
+class Nodes < Struct.new(:nodes)
+  def <<(node) # Method for adding a node on the fly
+    nodes << node
+    self
+  end
 end
 
 class LiteralNode < Struct.new(:value); end
