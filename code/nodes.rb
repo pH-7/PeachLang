@@ -12,9 +12,9 @@ class NumberNode < LiteralNode; end
 class StringNode < LiteralNode; end
 
 class TrueNode < LiteralNode
-    def initialize
-        super(true)
-    end
+  def initialize
+    super(true)
+  end
 end
 
 class FalseNode < LiteralNode

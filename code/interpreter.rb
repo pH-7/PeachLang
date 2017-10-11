@@ -2,13 +2,13 @@ require "parser"
 require "runtime"
 
 class Interpreter
-    def initialize
-        @parser = Parser.new
-    end
+  def initialize
+    @parser = Parser.new
+  end
 
-    def eval(code)
-        @parser.parse(code).eval(RootContext)
-    end
+  def eval(code)
+    @parser.parse(code).eval(RootContext)
+  end
 end
 
 class Nodes
@@ -17,14 +17,14 @@ class Nodes
         nodes.each do |node|
             return_value = node.eval(context)
         end
-        return_value || Constants["nill"]
+        return_value || Constants["nil"]
     end
 end
 
 class NumberNode
-    def eval(context)
-        Constants["Number"].new_with_value(value)
-    end
+  def eval(context)
+    Constants["Number"].new_with_value(value)
+  end
 end
 
 class StringNode
@@ -98,11 +98,11 @@ end
 
 
 class IfNode
-    def eval(context)
-        if condition.eval(context).ruby_value
-            body.eval(context)
-        else # If nobody evaluated it, returns nill
-            Constants["nil"]
-        end
+  def eval(context)
+    if condition.eval(context).ruby_value
+      body.eval(context)
+    else # If no body is evaluated, we return nil.
+      Constants["nil"]
     end
+  end
 end
