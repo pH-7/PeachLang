@@ -76,6 +76,20 @@ class SetLocalNode
 end
 
 
+
+class CallNode
+  def eval(context)
+    if receiver
+      value = receiver.eval(context)
+    else
+      value = context.current_self
+    end
+    evaluated_arguments = arguments.map { |arg| arg.eval(context) }
+    value.call(method, evaluated_arguments)
+  end
+end
+
+
 class FunctionNode
     def eval(context)
         method = PeachMethod.new(params, body)
