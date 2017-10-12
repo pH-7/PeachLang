@@ -18,7 +18,7 @@ class Nodes
       return_value = node.eval(context)
     end
 
-    return_value || Constants["nil"]
+    return_value || Constants["null"]
   end
 end
 
@@ -46,9 +46,9 @@ class FalseNode
     end
 end
 
-class NilNode
+class NullNode
     def eval(context)
-        Constants["nil"]
+        Constants["null"]
     end
 end
 
@@ -113,7 +113,7 @@ class IfNode
     if condition.eval(context).ruby_value
       body.eval(context)
     else # If no body is evaluated, we return nil.
-      Constants["nil"]
+      Constants["null"]
     end
   end
 end

@@ -105,7 +105,7 @@ rule
   | STRING                        { result = StringNode.new(val[0]) }
   | TRUE                          { result = TrueNode.new }
   | FALSE                         { result = FalseNode.new }
-  | NIL                           { result = NilNode.new }
+  | NIL                           { result = NullNode.new }
   ;
 
   # Method calls can take three forms:
@@ -187,9 +187,9 @@ rule
   # The `def` keyword is used for defining methods. Once again, we're introducing
   # a bit of syntactic sugar here to allow skipping the parentheses when there are no parameters.
   Def:
-    DEF IDENTIFIER Block          { result = DefNode.new(val[1], [], val[2]) }
+    DEF IDENTIFIER Block          { result = FunctionNode.new(val[1], [], val[2]) }
   | DEF IDENTIFIER
-      "(" ParamList ")" Block     { result = DefNode.new(val[1], val[3], val[5]) }
+      "(" ParamList ")" Block     { result = FunctionNode.new(val[1], val[3], val[5]) }
   ;
 
   ParamList:

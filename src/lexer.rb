@@ -1,5 +1,5 @@
 class Lexer
-    RESERVED_KEYWORDS = ["function", "class", "if", "true", "false", "nil"]
+    RESERVED_KEYWORDS = ["function", "class", "if", "true", "false", "null"]
 
     def tokenize(code)
         code.chomp! # Remove extra line breaks
@@ -29,7 +29,7 @@ class Lexer
                 tokens << [:STRING, string]
                 i += string.size + 2 #We skip two more chars to exclude the `"` delimeter
             elsif indent = chunk[/\A\:\n( +)/m, 1] # Matches ": <newline> <spaces>"
-                if indent.size <= current_indent # indent should go up when creating a block
+                if indent.size <= current_indent # Indentation should go up when creating a block
                     raise "Bad indent level, got #{indent.size} indents, " +
                         "expected > #{current_indent}"
                 end
