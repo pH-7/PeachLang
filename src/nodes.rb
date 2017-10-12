@@ -6,7 +6,9 @@ class Nodes < Struct.new(:nodes)
 end
 
 class LiteralNode < Struct.new(:value); end
+
 class NumberNode < LiteralNode; end
+
 class StringNode < LiteralNode; end
 
 class TrueNode < LiteralNode
@@ -29,11 +31,12 @@ end
 
 class CallNode < Struct.new(:receiver, :method, :arguments); end
 
- class GetConstantNode < Struct.new(:name); end
+class GetConstantNode < Struct.new(:name); end
 
- class SetConstantNode < Struct.new(:name, :value); end
+class SetConstantNode < Struct.new(:name, :value); end
 
 class GetLocalNode < Struct.new(:name); end
+
 class SetLocalNode < Struct.new(:name, :value); end
 
 class FunctionNode < Struct.new(:name, :params, :body); end

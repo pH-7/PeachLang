@@ -35,7 +35,6 @@ class VM
 
       when RETURN
         return stack.pop
-
       end
 
       ip += 1
