@@ -454,7 +454,7 @@ module_eval(<<'.,.,', 'grammar.y', 106)
 
 module_eval(<<'.,.,', 'grammar.y', 107)
   def _reduce_24(val, _values, result)
-     result = NilNode.new 
+     result = NullNode.new 
     result
   end
 .,.,
@@ -629,14 +629,14 @@ module_eval(<<'.,.,', 'grammar.y', 183)
 
 module_eval(<<'.,.,', 'grammar.y', 189)
   def _reduce_49(val, _values, result)
-     result = DefNode.new(val[1], [], val[2]) 
+     result = FunctionNode.new(val[1], [], val[2]) 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'grammar.y', 191)
   def _reduce_50(val, _values, result)
-     result = DefNode.new(val[1], val[3], val[5]) 
+     result = FunctionNode.new(val[1], val[3], val[5]) 
     result
   end
 .,.,

@@ -1,4 +1,4 @@
-require "lexer"
+require "../src/lexer"
 
 code= <<-CODE
 if 1:
