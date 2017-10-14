@@ -18,16 +18,16 @@ class Lexer
                 else
                     tokens << [:IDENTIFIER, identifier]
                 end
-                i += identifier.size # skip what we just parsed
-            elsif constant = chunk[/\A([A-Z]\w*)/, 1] # Scanning for constants
+                i += identifier.size # Skip things we just parsed
+            elsif constant = chunk[/\A([A-Z]\w*)/, 1] # Scan the constants
                 tokens << [:CONSTANT, constant]
                 i += constant.size
-            elsif number = chunk[/\A([0-9]+)/, 1] # Scanning for integers
+            elsif number = chunk[/\A([0-9]+)/, 1] # Scan the integers
                 tokens << [:NUMBER, number.to_i]
                 i += number.size
-            elsif string = chunk[/\A"([^"]*)"/, 1] # Scanning for strings
+            elsif string = chunk[/\A"([^"]*)"/, 1] # Scan strings
                 tokens << [:STRING, string]
-                i += string.size + 2 #We skip two more chars to exclude the `"` delimeter
+                i += string.size + 2 # Skip twp more chars to exclude the `"` delimeter
             elsif indent = chunk[/\A\:\n( +)/m, 1] # Matches ": <newline> <spaces>"
                 if indent.size <= current_indent # Indentation should go up when creating a block
                     raise "Bad indent level, got #{indent.size} indents, " +
