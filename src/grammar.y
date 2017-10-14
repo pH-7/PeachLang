@@ -1,14 +1,12 @@
 class Parser
 
-# We need to tell the parser what tokens to expect. So each type of token produced
-# by our lexer needs to be declared here.
 token IF
-token DEF
+token FUNCTION
 token CLASS
 token NEWLINE
 token NUMBER
 token STRING
-token TRUE FALSE NIL
+token TRUE FALSE NULL
 token IDENTIFIER
 token CONSTANT
 token INDENT DEDENT
@@ -105,7 +103,7 @@ rule
   | STRING                        { result = StringNode.new(val[0]) }
   | TRUE                          { result = TrueNode.new }
   | FALSE                         { result = FalseNode.new }
-  | NIL                           { result = NullNode.new }
+  | NULL                          { result = NullNode.new }
   ;
 
   # Method calls can take three forms:
