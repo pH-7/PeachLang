@@ -1,10 +1,10 @@
 code=<<-CODE
-  def method(a, b):
+  function method(a, b):
     true
 CODE
 
 nodes = Nodes.new([
-  DefNode.new("method", ["a", "b"],
+  FunctionNode.new("method", ["a", "b"],
       Nodes.new([TrueNode.new])
   )
 })

@@ -1,6 +1,6 @@
 code = <<-CODE
 class pHSevenLang
-    def does_it_work:
+    function does_it_work:
         "yeahhh!"
 
     phsevenlang_obj = pHSevenLang.new

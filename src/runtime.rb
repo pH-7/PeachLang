@@ -12,6 +12,7 @@ Constants["Object"] = PeachClass.new
 RootContext = Context.new(Constants["Object"].new)
 
 Constants["Number"] = PeachClass.new
+
 Constants["String"] = PeachClass.new
 
 Constants["TrueClass"] = PeachClass.new
