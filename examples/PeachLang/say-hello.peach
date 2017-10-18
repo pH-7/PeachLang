@@ -1,2 +1,5 @@
 hello="Hello World!"
+
 say(hello)
+say("")
+say("How are you today?")
