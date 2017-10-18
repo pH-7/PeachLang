@@ -64,12 +64,14 @@ class GetLocalNode
     end
 end
 
+# Converts constants into an object before storing its values
 class SetConstantNode
     def eval(context)
         Constants[name] = value.eval(context)
     end
 end
 
+# Converts local variables into an object before storing it
 class SetLocalNode
     def eval(context)
         context.locals[name] = value.eval(context)
