@@ -31,3 +31,8 @@ Constants["Object"].def :say do |receiver, arguments|
   puts arguments.first.ruby_value
   Constants["null"]
 end
+
+Constants["Number"].def :+ do |receiver, arguments|
+  result = receiver.ruby_value + arguments.first.ruby_value
+  Constants["Number"].new_with_value(result)
+end
