@@ -12,6 +12,7 @@ token TRUE FALSE NULL
 token IDENTIFIER
 token CONSTANT
 token INDENT DEDENT
+token WHILE
 
 # Here is the Operator Precedence Table. As presented before, it tells the parser in
 # which order to parse expressions containing operators.
@@ -84,6 +85,7 @@ rule
   | Class
   | If
   | '(' Expression ')'    { result = val[1] }
+  | While
   ;
 
   # Notice how we implement support for parentheses using the previous rule.
@@ -202,6 +204,10 @@ rule
   # Class names are also constants because they start with a capital letter.
   Class:
     CLASS CONSTANT Block          { result = ClassNode.new(val[1], val[2]) }
+  ;
+
+  While:
+    WHILE Expression Block { result = WhileNode.new(val[1], val[2]) }
   ;
 
   # Finally, `if` is similar to `class` but receives a *condition*.
