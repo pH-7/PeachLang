@@ -1,5 +1,7 @@
+# Define the name of the parser class
 class Parser
 
+# Define the tokens that the parser expects
 token IF
 token FUNCTION
 token CLASS
