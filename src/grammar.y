@@ -78,7 +78,7 @@ rule
   | SetConstant
   | GetLocal
   | SetLocal
-  | Def
+  | FUNCTION
   | Class
   | If
   | '(' Expression ')'    { result = val[1] }
@@ -182,11 +182,11 @@ rule
     INDENT Expressions DEDENT     { result = val[1] }
   ;
 
-  # The `def` keyword is used for defining methods. Once again, we're introducing
+  # The `function` keyword is used for defining methods. Once again, we're introducing
   # a bit of syntactic sugar here to allow skipping the parentheses when there are no parameters.
   Def:
-    DEF IDENTIFIER Block          { result = FunctionNode.new(val[1], [], val[2]) }
-  | DEF IDENTIFIER
+    FUNCTION IDENTIFIER Block          { result = FunctionNode.new(val[1], [], val[2]) }
+  | FUNCTION IDENTIFIER
       "(" ParamList ")" Block     { result = FunctionNode.new(val[1], val[3], val[5]) }
   ;
 

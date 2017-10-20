@@ -1,5 +1,5 @@
 code = <<-CODE
-    def say_it:
+    function say_it:
         text = "This is compiled!"
         puts(text)
     say_it()
