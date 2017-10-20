@@ -1,7 +1,7 @@
 code = <<-CODE
 class pHSevenLang
     function does_it_work:
-        "yeahhh!"
+        "Yaaay! It works!"
 
     phsevenlang_obj = pHSevenLang.new
     if phsevenlang_obj:

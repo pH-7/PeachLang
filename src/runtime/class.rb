@@ -8,7 +8,7 @@ class PeachClass < PeachObject
 
     def lookup(method_name)
         method = @runtime_methods[method_name]
-        raise "Method not found #{method_name}" if method.nil?
+        raise "Method #{method_name} not found!" if method.nil?
         method
     end
 

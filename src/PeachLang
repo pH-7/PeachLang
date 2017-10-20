@@ -6,7 +6,6 @@ require "interactiveshell"
 require "interpreter"
 require "readline"
 
-
 interpreter = Interpreter.new
 
 if file = ARGV.first

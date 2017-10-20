@@ -12,7 +12,7 @@ class BytecodeCompiler
     @bytecode
   end
 
-  def emit(opcode, *operands) # emit OPCODE, operand1, operand2, ... operandX
+  def emit(opcode, *operands) # emits OPCODE, operand1, operand2, ... operandX
     @bytecode << opcode
     @bytecode.concat operands
   end
