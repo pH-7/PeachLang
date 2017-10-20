@@ -23,6 +23,20 @@ Hi
 => nil
 ```
 
+## Modify "grammar.y"
+
+If you change `grammar.y`, you will need to regenerate `parser.rb` file by using the following command:
+```bash
+racc -o parser.rb grammar.y
+```
+
+P.S. You will need to install Racc before doing it.
+
+```bash
+gem install racc
+```
+
+
 ## Contact
 
 Any questions, please ask me at *hi {{ AT }} ph7 {{ D0T }} me*
