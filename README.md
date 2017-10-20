@@ -23,9 +23,10 @@ Hi
 => nil
 ```
 
+
 ## Modify "grammar.y"
 
-If you change `grammar.y`, you will need to regenerate `parser.rb` file by using the following command:
+If you change `grammar.y` parsing rules, you will need to regenerate `parser.rb` file by using the following command:
 ```bash
 racc -o parser.rb grammar.y
 ```
