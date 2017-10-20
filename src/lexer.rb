@@ -1,5 +1,5 @@
 class Lexer
-    RESERVED_KEYWORDS = ["function", "class", "if", "true", "false", "null", "while"]
+    PEACH_KEYWORDS = ["function", "class", "if", "true", "false", "null", "while"]
 
     def tokenize(code)
         code.chomp! # Remove extra line breaks
@@ -13,7 +13,7 @@ class Lexer
             chunk = code[i..-1]
 
             if identifier = chunk[/\A([a-z]\w*)/, 1] # Scanning for method & variable names
-                if RESERVED_KEYWORDS.include?(identifier) # keywords will generate [:IF, "if"]
+                if PEACH_KEYWORDS.include?(identifier) # keywords will generate [:IF, "if"]
                     tokens << [identifier.upcase.to_sym, identifier]
                 else
                     tokens << [:IDENTIFIER, identifier]
