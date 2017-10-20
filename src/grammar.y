@@ -184,7 +184,7 @@ rule
 
   # The `function` keyword is used for defining methods. Once again, we're introducing
   # a bit of syntactic sugar here to allow skipping the parentheses when there are no parameters.
-  Def:
+  Function:
     FUNCTION IDENTIFIER Block          { result = FunctionNode.new(val[1], [], val[2]) }
   | FUNCTION IDENTIFIER
       "(" ParamList ")" Block     { result = FunctionNode.new(val[1], val[3], val[5]) }
