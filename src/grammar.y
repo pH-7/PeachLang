@@ -155,6 +155,7 @@ rule
   | Expression '-'  Expression  { result = CallNode.new(val[0], val[1], [val[2]]) }
   | Expression '*'  Expression  { result = CallNode.new(val[0], val[1], [val[2]]) }
   | Expression '/'  Expression  { result = CallNode.new(val[0], val[1], [val[2]]) }
+  | '!' Expression { result = CallNode.new(val[1], val[0], []) }
   ;
 
   # Then we have rules for getting and setting values of constants and local variables.
