@@ -81,7 +81,7 @@ rule
   | SetConstant
   | GetLocal
   | SetLocal
-  | FUNCTION
+  | Function
   | Class
   | If
   | '(' Expression ')'    { result = val[1] }
