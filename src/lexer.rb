@@ -1,5 +1,5 @@
 class Lexer
-    RESERVED_KEYWORDS = ["function", "class", "if", "true", "false", "null"]
+    RESERVED_KEYWORDS = ["function", "class", "if", "true", "false", "null", "while"]
 
     def tokenize(code)
         code.chomp! # Remove extra line breaks
