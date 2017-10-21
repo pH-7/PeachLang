@@ -1,8 +1,8 @@
 # PeachLang (Programming Language)
 
-**PeachLang** is a simple interpreted language done with Ruby using Racc (the Ruby version of Yacc/Bison). The language has been made thanks to [MACournoyer's book](http://01script.com/comment-creer-son-langage-de-programmation/).
+**PeachLang** is a simple interpreted language done with Ruby using Racc for the parser (Racc is the Ruby version of Yacc/Bison). The language has been made thanks to [MACournoyer's book](http://01script.com/comment-creer-son-langage-de-programmation/).
 
-Although my favorite book (my bedside book :D) is by far the [Dragon Book](https://www.amazon.ca/Compilers-Principles-Techniques-Tools-2nd/dp/0321486811), Marc-André's book is really cool as well.
+Although my favorite book (my bedside book! :D) is by far the [Dragon Book](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools), Marc-André's book is really cool as well :-)
 
 
 ## Usage
@@ -10,7 +10,7 @@ Although my favorite book (my bedside book :D) is by far the [Dragon Book](https
 From your terminal, you can execute the example peach file:
 
 ```bash
-ruby code/PeachLang examples/PeachLang/say-hello.peach
+ruby src/PeachLang examples/PeachLang/say-hello.peach
 ```
 
 Or... use the interactive shell, like
@@ -31,8 +31,7 @@ If you change `grammar.y` parsing rules, you will need to regenerate `parser.rb`
 racc -o parser.rb grammar.y
 ```
 
-P.S. You will need to install Racc before doing it.
-
+P.S. You will need to install Racc before doing it:
 ```bash
 gem install racc
 ```
@@ -40,4 +39,4 @@ gem install racc
 
 ## Contact
 
-Any questions, please ask me at *hi {{ AT }} ph7 {{ D0T }} me*
+Any questions, please ask me at *hi {{ AT }} ph7 {{ D0T }} me* or visit [my personal website](http://ph7.me).
