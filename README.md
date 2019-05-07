@@ -36,7 +36,7 @@ P.S. You will need to install Racc before doing it:
 gem install racc
 ```
 
-## Other Programming Language I've Done
+## Other Programming Languages I've Done
 
 * [JoraLang](https://github.com/pH-7/JoraLang)
 * [GoYa Programming Language](https://github.com/pH-7/GoYa)
