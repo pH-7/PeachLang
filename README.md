@@ -2,7 +2,7 @@
 
 **PeachLang™** is a simple interpreted programming language done with Ruby using Racc for the parser (Racc is the Ruby version of Yacc/Bison). The language has been made thanks to [MACournoyer's book](http://01script.com/comment-creer-son-langage-de-programmation/).
 
-Although my favorite book (my bedside book! :D) is by far the [Dragon Book](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools), Marc-André's book is really cool as well :-)
+Although my favorite book (my bedside book TBH! 👌) is by far the [Dragon Book](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools), Marc-André's book is really good too! 😊
 
 
 ## 📓 Usage
